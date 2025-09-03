@@ -18,13 +18,13 @@ def load_models_and_data():
     
     try:
         # Load the trained XGBoost model
-        model = joblib.load("../model/xgb_regressor.joblib")
+        model = joblib.load(r"model\xgb_regressor.joblib")
         
         # Load the label encoders
-        label_encoders = joblib.load("../model/label_encoders.joblib")
+        label_encoders = joblib.load(r"model\label_encoders.joblib")
         
         # Load the template data to get feature values
-        df_template = pd.read_csv("../data/processed/top_15_items_df.csv", low_memory=False)
+        df_template = pd.read_csv(r"data\top_15_items_df.csv", low_memory=False)
         df_template['date'] = pd.to_datetime(df_template['date'])
         
         # Create the missing quarter feature (just like in the notebook)

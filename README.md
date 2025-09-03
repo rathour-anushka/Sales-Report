@@ -1,12 +1,12 @@
 # Sales-Report
 
-This project combines machine learning models for sales forecasting with a dynamic Power BI dashboard connected to a Flask API backend. The system provides real-time sales analytics and predictions.
+This project combines machine learning models for sales forecasting with a dynamic Power BI dashboard connected to a FastAPI backend. The system provides real-time sales analytics and predictions.
 
 ## Project Structure
 
 ```
 ├── app/
-│   ├── app.py         # Flask API implementation
+│   ├── app.py         # FastAPI implementation
 │   └── main.py        # Main application entry point
 ├── model/
 │   ├── FOODS_3_586.pkl               # Trained model data
@@ -36,7 +36,7 @@ This project combines machine learning models for sales forecasting with a dynam
 
 ## Power BI Dashboard Integration
 
-The project includes a Power BI dashboard (`sales.forecast.pbix`) that connects to the Flask API for real-time data visualization. The dashboard provides:
+The project includes a Power BI dashboard (`sales.forecast.pbix`) that connects to the FastAPI backend for real-time data visualization. The dashboard provides:
 
 - Sales forecasting visualizations
 - Category-wise analysis
@@ -46,8 +46,8 @@ The project includes a Power BI dashboard (`sales.forecast.pbix`) that connects 
 ### Setting up Power BI Connection
 
 1. Open `sales.forecast.pbix` in Power BI Desktop
-2. The dashboard is configured to connect to the local API endpoint: `http://localhost:5000`
-3. Ensure the Flask API is running before refreshing the dashboard
+2. The dashboard is configured to connect to the local API endpoint: `http://localhost:8000`
+3. Ensure the FastAPI server is running before refreshing the dashboard
 4. Use Power BI's scheduled refresh features for automated updates
 
 ## Installation
@@ -64,18 +64,18 @@ pip install -r requirements.txt
 
 ## Running the Application
 
-1. Start the Flask API:
+1. Start the FastAPI server:
 ```bash
-python app/main.py
+uvicorn app.main:app --reload
 ```
 
-2. The API will be available at `http://localhost:5000`
-
-3. Open `sales.forecast.pbix` to view the dashboard
+2. The API will be available at `http://localhost:8000`
+3. Interactive API documentation will be available at `http://localhost:8000/docs`
+4. Open `sales.forecast.pbix` to view the dashboard
 
 ## API Endpoints
 
-The Flask API provides the following endpoints:
+The FastAPI backend provides the following endpoints:
 
 - `GET /sales/forecast`: Get sales forecasts
 - `GET /sales/categories`: Get category-wise sales data
