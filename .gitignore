@@ -1,0 +1,11 @@
+# Large data files
+data/processed/grouped_revenue.csv
+data/raw/sales_train_evaluation.csv
+data/raw/sell_prices.csv
+data/processed/final_df.csv
+data/raw/sales_train_validation.csv
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
