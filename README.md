@@ -73,13 +73,6 @@ uvicorn app.main:app --reload
 3. Interactive API documentation will be available at `http://localhost:8000/docs`
 4. Open `sales.forecast.pbix` to view the dashboard
 
-## API Endpoints
-
-The FastAPI backend provides the following endpoints:
-
-- `GET /sales/forecast`: Get sales forecasts
-- `GET /sales/categories`: Get category-wise sales data
-- `GET /sales/top15`: Get top 15 performing products
 
 ## Model Information
 
@@ -106,8 +99,3 @@ The `notebook/` directory contains Jupyter notebooks used for:
 - Python 3.7+
 - Power BI Desktop
 - Required Python packages listed in `requirements.txt`
-
-
-## Contact
-
-Anushka Rathour - [GitHub](https://github.com/rathour-anushka)
